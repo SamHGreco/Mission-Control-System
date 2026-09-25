@@ -14,7 +14,7 @@ vehicle["name"] = input("name?")
 #Request and validate type input
 ValidTypes = ["Rover", "Drone", "Submarine"]
 while True: #Loop until a valid type is entered
-    vehicle["type"] = input("type?")
+    vehicle["type"] = input("type?").title()
     if vehicle["type"] not in ValidTypes:
         print("Invalid type. Please enter Rover, Drone, or Submarine.")
         continue
