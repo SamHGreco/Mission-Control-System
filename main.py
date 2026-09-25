@@ -37,10 +37,7 @@ while True: #Loop until input is a valid number
 vehicle["status"] = "Available"
 vehicle["mission"] = "None"
 
-print("Name: ", vehicle["name"])
-print("Type: ", vehicle["type"])
-print("Battery: ", vehicle["battery"],"%")
-print("Status: ",vehicle["status"])
-print("Mission: ", vehicle["mission"])
+fleet = []
+fleet.append(vehicle)
 
-print(type(vehicle["battery"]))
+print("Fleet: ", fleet)
