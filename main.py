@@ -13,7 +13,14 @@ def register_vehicle():
         "mission" : "missionplace"
     }
 
-    vehicle["name"] = input("name?")
+    while True:
+        vehicle["name"] = input("name?")
+        for v in fleet:
+            if v["name"].lower() == vehicle["name"].lower():
+                print("A vehicle with this name already exists.")
+                break
+        else:
+            break
 
     #Request and validate type input
     ValidTypes = ["Rover", "Drone", "Submarine"]
@@ -55,8 +62,19 @@ def view_vehicles():
             print()  # Add a blank line between vehicles
     else:
         print("No vehicles registered.")
-        
-register_vehicle()
-register_vehicle()
 
-view_vehicles()
+while True:
+    print("1. Register Vehicle")
+    print("2. View Vehicles")
+    print("3. Exit")
+    choice = input("Choose an option: ")
+    if choice == "1":
+        register_vehicle()
+    elif choice == "2":
+        view_vehicles()
+    elif choice == "3":
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+
